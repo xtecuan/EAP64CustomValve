@@ -7,3 +7,8 @@ Add Module to slot main (https://access.redhat.com/documentation/en-us/red_hat_j
 Add Global Valve (https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/6.2/html/administration_and_configuration_guide/configure_a_global_valve)
 
 /subsystem=web/valve=CustomValve:add(module="sv.com.fedecredito.valves.customvalve",class-name="sv.com.fedecredito.valves.customvalve.CustomValve") 
+
+
+Add Web-fragment (https://access.redhat.com/solutions/338313)
+
+deployment-overlay add --name=web-fragment --content=WEB-INF/lib/web-fragment-lib.jar=C:\Users\xtecuan\Documents\NetBeansProjects\CustomValve\target\CustomValve-1.0-SNAPSHOT.jar --deployments=*.war --redeploy-affected
