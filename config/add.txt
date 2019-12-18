@@ -1,0 +1,9 @@
+Build a Custom Valve (https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/pdf/development_guide/Red_Hat_JBoss_Enterprise_Application_Platform-6.4-Development_Guide-en-US.pdf)
+
+Add Module to slot main (https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/6.4/html/administration_and_configuration_guide/create_a_custom_module)
+
+/subsystem=ee:write-attribute(name=global-modules, value=[{"name"=>"sv.com.fedecredito.valves.customvalve","slot"=>"main"}]  
+
+Add Global Valve (https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/6.2/html/administration_and_configuration_guide/configure_a_global_valve)
+
+/subsystem=web/valve=CustomValve:add(module="sv.com.fedecredito.valves.customvalve",class-name="sv.com.fedecredito.valves.customvalve.CustomValve") 
